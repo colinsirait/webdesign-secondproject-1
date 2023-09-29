@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    overflow: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 52px;   
+    font-weight: 500;
+    text-align: center;
+}
+
+h2 {
+    font-size: 300%;
+    font-weight: bolder;
+    text-align: right;
+    float: right;
+}
+
+h3 {
+    font-size: smaller;
+    font-weight: lighter;
+    position: sticky;
+    top: 100px;
+}
+
+h4 {
+    font-size: x-large;
+    color: silver;
+    background-color: red;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+}
+
+
+
+.main {
+    color: green;
+}
+
+p {
+    color: blue;
+}
+
+#banner{
+    width: 300px;
+    height: fit-content;
+    background-color: green;
+    margin: 50px 30px;
+    margin:0 auto;
+}
+
+.New h1{
+    background-color: purple;
+    color: white ;
+    position: absolute;
+    top: 50px;
+}
+
+.New h2{
+    border: chartreuse 4px dotted;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.New p{
+    font-size: xx-large;
+    border: violet 5px dashed;
+    width: fit-content;
+    padding: 20px 15px;
+    overflow: scroll;
+    position: relative;
+    top: 20px;
+}
+
+.visible{
+    visibility: hidden;
+}
+
+.rectangle{
+    display: inline-block;
+    background-color: red;
+    width: 200px;
+    height: 300px;
+}
