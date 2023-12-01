@@ -12,55 +12,55 @@
         <a href="./page2.html">Things to do in Indiana</a>
         <a href="./page3.html">Greatest Video Games of All Time</a>
     </div>
-    <h1>Greatest Video Games of All Time, as ranked by sources</h1>
+    <h1 id="title">Greatest Video Games of All Time, as ranked by sources</h1>
     <hr>
     <section class="layout">
-        <div class="ten">
+        <div id="up" class="ten">
             <img src="https://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg" alt="">
             <h2>10. Half-Life 2 (2004)</h2>
             <h3>An alien force named the Combine has taken over Earth and it is a physicist’s job to stop them.</h3>
         </div>
-        <div class="nine">
+        <div id="up2" class="nine">
             <img src="https://upload.wikimedia.org/wikipedia/en/8/8d/Dark_Souls_Cover_Art.jpg" alt="">
             <h2>9. Dark Souls (2011)</h2>
             <h3>A cursed undead warrior goes on a journey to discover the fate of their kind.</h3>
         </div>
-        <div class="eight">
+        <div id="up" class="eight">
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Portal2cover.jpg/220px-Portal2cover.jpg" alt="">
             <h2>8. Portal 2 (2011)</h2>
             <h3>A test subject tries to stop a robot with the help of another robot companion and a portal gun.</h3>
         </div>
-        <div class="seven">
+        <div id="up2" class="seven">
             <img src="https://upload.wikimedia.org/wikipedia/en/3/33/Metal_Gear_Solid_cover_art.png" alt="">
             <h2>7. Metal Gear Solid (1998)</h2>
             <h3>A soldier infiltrates a nuclear weapons facility to stop a terrorist threat with stealth.</h3>
         </div>
-        <div class="six">
+        <div id="up" class="six">
             <img src="https://upload.wikimedia.org/wikipedia/en/0/05/MassEffect2_cover.PNG" alt="">
             <h2>6. Mass Effect 2 (2010)</h2>
             <h3>Humanity is threatened by an alien race known as the Collectors, a suicide mission is tasked for the job.</h3>
         </div>
-        <div class="five">
+        <div id="down" class="five">
             <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg" alt="">
             <h2>5. The Witcher III: Wild Hunt (2015)</h2>
             <h3>A monster slayer known as a Witcher searches for his daughter, running from the Wild Hunt.</h3>
         </div>
-        <div class="four">
+        <div id="down2" class="four">
             <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Bloodborne_Cover_Wallpaper.jpg" alt="">
             <h2>4. Bloodborne (2015)</h2>
             <h3>A hunter tries to find the source of the plague that turns citizens into horrific beasts.</h3>
         </div>
-        <div class="three">
+        <div id="down" class="three">
             <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Tetris_NES_cover_art.jpg" alt="">
             <h2>3. Tetris (1985)</h2>
             <h3>Clearing each row with randomly-generated blocks for as long as possible.</h3>
         </div>
-        <div class="two">
+        <div id="down2" class="two">
             <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" alt="">
             <h2>2. The Last of Us (2013)</h2>
             <h3>A smuggler and a teenage girl fight against infected and cannibalistic creatures and humans.</h3>
         </div>
-        <div class="one">
+        <div id="down" class="one">
             <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" alt="">
             <h2>1. The Legend of Zelda: Breath of the Wild (2017)</h2>
             <h3>A warrior sets out to save the princess and prevent the destruction of the world.</h3>
@@ -68,4 +68,85 @@
         
       </section>
 </body>
+<script>
+    //document.body.addEventListener("keydown", squares);
+    //var up = document.getElementById("up");
+    //var up2 = document.getElementById("up2");
+    //var down = document.getElementById("down");
+    //var down2 = document.getElementById("down2");
+    var button = document.createElement("button");
+    var list = document.getElementsByTagName("div");
+    var navbar = document.getElementsByClassName("topnav")[0];
+    button.innerText = "Information";
+    button.addEventListener("click", info)
+
+    for(var i=0; i<list.length; i++){
+        list[i].addEventListener("click", colorChange);
+    }
+
+
+    navbar.appendChild(button);
+
+    function info(){
+        if (document.getElementById("test")){
+            return;
+        }
+
+        var div = document.createElement("div");
+        div.id = "test";
+        var img = document.createElement("img");
+        var text = document.createElement("p");
+        var a = document.createElement("a");
+        var reference = document.getElementById("title");
+
+        img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/GQ_Logo.svg/1280px-GQ_Logo.svg.png";
+        text.innerHTML = "These results were sourced from British GQ.";
+        a.href="https://www.gq-magazine.co.uk/article/best-video-games-all-time";
+        a.innerHTML = "https://www.gq-magazine.co.uk/article/best-video-games-all-time"
+
+        img.style.width = "300px";
+        img.style.height = "161px";
+        img.style.margin = "auto";
+        img.style.marginTop = "20px";
+
+        text.style.fontSize = "30px";
+        text.style.textAlign = "center";
+        text.style.margin = "auto";
+        text.style.fontFamily = "Verdana, Geneva, sans-serif";
+        text.style.fontStyle = "italic";
+        text.style.fontWeight = "bolder";
+
+        a.style.fontSize = "20px";
+        a.style.textAlign = "center";
+        a.style.margin = "auto";
+        a.style.display="block";
+        a.style.fontFamily = "Verdana, Geneva, sans-serif";
+        a.style.fontStyle = "italic";
+        a.style.fontWeight = "bolder";
+
+        div.appendChild(img);
+        div.appendChild(text);
+        div.appendChild(a);
+
+        reference.parentNode.insertBefore(div,reference);
+    }
+
+
+    function colorChange(){
+        var attribute = this.getAttribute("style");
+        //console.log(attribute);
+        //if(attribute==="color: gold;"){
+        //    this.removeAttribute("style");
+        //} else {
+        //    this.style.color = "gold";
+        //}
+
+        if(attribute==="background-color: gold;"){
+            this.removeAttribute("style");
+        } else {
+            this.style.backgroundColor = "gold";
+        }
+    }
+
+</script>
 </html>

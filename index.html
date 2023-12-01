@@ -12,7 +12,7 @@
         <a href="./page2.html">Things to do in Indiana</a>
         <a href="./page3.html">Greatest Video Games of All Time</a>
     </div>
-    <h1>Most Popular Music Genres</h1>
+    <h1 id="title">Most Popular Music Genres</h1>
 <section class="layout">
 
     <div class="pop">
@@ -53,7 +53,7 @@
         <p>Avicii</p>
         <p>Daft Punk</p>
         <p>Skrillex</p>
-        <img src="https://ericmackattacks.com/wp-content/uploads/2016/12/daft-punk-random-access-memories.jpg?x22140" alt="" class="imagetest">    
+        <img src="https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937" alt="" class="imagetest">    
         <p>Daft Punk - Random Access Memories (2013)</p>
     </div>
 
@@ -76,7 +76,8 @@
         <p>Duke Ellington</p>
         <p>Miles Davis</p>
         <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e0/a5/56/e0a5560a-3586-b153-e832-af81df3ed9b8/12UMGIM11012.rgb.jpg/632x632bb.webp" alt="" class="imagetest">    
-        <p>Louis Armstrong - What A Wonderful World (1968)</p>
+        <p>Louis Armstrong</p>
+        <p>What A Wonderful World (1968)</p>
     </div>
 
 
@@ -109,7 +110,7 @@
         <p>Imagine Dragons</p>
         <p>Nirvana</p>
         <img src="./resource/df7eeb83a07162b45ac2e882cac055de9411054a_cover.png" alt="" class="imagetest">    
-        <p>Nirvana - Nevermind (1991)</p>
+        <p>Nirvana - Nevermind (1991) [genitalia censored]</p>
     </div>
     
 
@@ -123,8 +124,87 @@
         <p>Shakira - Fijación Oral, Vol 1 (2005)</p>
     </div>
 </section>
-    
-
-    
 </body>
+
+<script>
+    //let prePage = prompt("Before this page fully loads, what would you prefer the color of the background to be?");
+
+    //document.body.style.backgroundColor = prePage;
+    //if (prePage.lower() = "black"){
+      //  document.body.style.textColor = "white";
+    //}
+    var button = document.createElement("button");
+    var paragraphs = document.getElementsByTagName("p");
+    var h2 = document.getElementsByTagName("h2");
+    var h3 = document.getElementsByTagName("h3");
+    var navbar = document.getElementsByClassName("topnav")[0];
+    var title = document.getElementById("title");
+    button.innerText = "Center - [Press W!]";
+    button.addEventListener("click", custom)
+    
+    function custom(){
+        for (var i = 0; i<paragraphs.length; i++){
+            paragraphs[i].style.textAlign = "center";
+            
+        }
+
+        for (var i = 0; i<h2.length; i++){
+        h2[i].style.textAlign = "center";
+        }
+
+        for (var i = 0; i<h3.length; i++){
+        h3[i].style.textAlign = "center";
+        }
+    }
+    navbar.appendChild(button);
+
+    document.body.addEventListener("keydown", strokeDown);
+    document.body.addEventListener("keyup", strokeUp);
+    var images = document.getElementsByTagName("img");
+    var h2 = document.getElementsByTagName("h2");
+
+
+    function strokeDown(e){
+        if(e.key === "w"){
+            for (var i = 0; i<images.length; i++){
+                if(images[i].style.borderColor==="gold"){
+                    images[i].style.borderColor = "transparent";
+                } else {
+                    images[i].style.borderColor = "gold";
+                }    
+            }
+        }
+    }
+
+    function strokeUp(e){
+        if(e.key === "w"){           
+            if(title.style.color==="pink"){
+                title.style.color = "black";
+            } else {
+                title.style.color = "pink";
+            }    
+            for (var i = 0; i<h2.length; i++){
+                if(h2[i].style.color==="red"){
+                    h2[i].style.color = "black";
+                } else {
+                    h2[i].style.color = "red";
+                }    
+            }
+            for (var i = 0; i<h3.length; i++){
+                if(h3[i].style.color==="orange"){
+                    h3[i].style.color = "black";
+                } else {
+                    h3[i].style.color = "orange";
+                }    
+            }
+            for (var i = 0; i<paragraphs.length; i++){
+                if(paragraphs[i].style.color==="yellow"){
+                    paragraphs[i].style.color = "black";
+                } else {
+                    paragraphs[i].style.color = "yellow";
+                }    
+            }
+        }
+    }
+</script>
 </html>
